@@ -60,65 +60,366 @@ li {
 }
 
 .recruiter-search-block {
-  background-color: #121212;
+  width: 100%;
   height: 200px;
+  background-color: #262833;
   display: flex;
   justify-content: center;
 }
 .input-container {
-  border: 1px solid blue;
-  /* width: 260px; */
-  height: 70px;
-  position: relative;
-  margin-top: 30px;
-  padding-inline: 10px;
-}
-/* .input-container span {
-  position: absolute;
-  left: 10px;
-  top: 23px;
-  border: 1px solid red;
-} */
-.search-jobs-input {
-  padding-left: 35px;
-  border: 1px solid #b1b1b1;
   width: 60%;
-  height: 50px;
-  margin-top: 10px;
-  margin-left: 0;
-  text-align: center;
-  font-size: 20px;
-  border-radius: 35px;
+  height: 70px;
+  /* background-color: #fff; */
+  margin-top: 30px;
+  padding: 10px;
+  position: relative;
+}
+.input-container input {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
   outline: none;
-  z-index: 1;
-  /* position: absolute; */
+  border: none;
 }
-.search-jobs-input[type="text"] {
-  border-radius: 0 !important;
-  height: 50px !important;
-  font-size: 14px !important;
-  box-shadow: none !important;
-  line-height: 100% !important;
-  padding-right: 40rem;
-}
-.search-jobs-label {
+.input-container label {
   position: absolute;
-  left: 4.5rem;
-  top: 1.5rem;
-  padding: 0 0.25rem;
-  background-color: #fff;
+  top: 23px;
+  left: 100px;
   color: var(--input-color);
   font-size: var(--normal-font-size);
-  transition: 0.3s;
-  cursor: text;
 }
-.search-jobs-input:focus + .search-jobs-label {
-  /* top: 2px;
-  left: 1.3rem;
-  color: var(--first-color);
-  font-size: var(--small-font-size);
-  font-weight: 500;
-  z-index: 10;
-  cursor: default; */
+.input-container span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.lens-icon {
+  position: absolute;
+  right: 10px;
+}
+/* .search-jobs-input:focus + .search-jobs-label {
   display: none;
+} */
+.search-jobs-input[type="text"] {
+  padding-left: 3rem;
+
+  font-size: 20px !important;
+  /* box-shadow: none !important;
+  line-height: 100%  */
+}
+.filter-block {
+  width: 100%;
+  height: 200px;
+  /* background-color: aqua; */
+  position: relative;
+}
+.filter-items-container {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  border: 1px solid red;
+  top: -40px;
+  display: flex;
+  justify-content: center;
+  column-gap: 140px;
+}
+.filter-items {
+  width: 180px;
+  height: 80px;
+  border-radius: 8px;
+  border: 1px solid red;
+}
+.flt-item1 {
+  /* background-color: #4acfac; */
+  position: relative;
+}
+.flt-item1 input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #80868b;
+  border-radius: inherit;
+  position: absolute;
+  outline: none;
+  top: 0;
+  left: 0;
+  /* padding-left: 8px; */
+}
+.flt-item1 input[type="text"] {
+  font-size: 17px;
+  /* text-align: center; */
+  padding-left: 18px;
+}
+.flt-item1 input:focus::placeholder {
+  color: transparent;
+}
+.flt-item1 button {
+  width: 20px;
+  height: 78px;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  cursor: pointer;
+  background-color: #4acfac;
+  border-bottom-right-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.flt-item2 {
+  position: relative;
+  /* background-color: #7e8ce0; */
+}
+.flt-item2 input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #80868b;
+  border-radius: inherit;
+  position: absolute;
+  outline: none;
+  top: 0;
+  left: 0;
+  /* padding-left: 8px; */
+}
+.flt-item2 input[type="text"] {
+  font-size: 17px;
+  /* text-align: center; */
+  padding-left: 18px;
+}
+.flt-item2 input:focus::placeholder {
+  color: transparent;
+}
+.flt-item2 button {
+  width: 20px;
+  height: 78px;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  cursor: pointer;
+  background-color: #7e8ce0;
+  border-bottom-right-radius: inherit;
+  border-top-right-radius: inherit;
+}
+.flt-item3 {
+  position: relative;
+  /* background-color: #ffa48e; */
+  border-radius: 8px;
+}
+.flt-item3 input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #80868b;
+  border-radius: inherit;
+  position: absolute;
+  outline: none;
+  top: 0;
+  left: 0;
+  /* padding-left: 8px; */
+}
+.flt-item3 input[type="text"] {
+  font-size: 17px;
+  /* text-align: center; */
+  padding-left: 18px;
+}
+.flt-item3 input:focus::placeholder {
+  color: transparent;
+}
+.flt-item3 button {
+  width: 20px;
+  height: 78px;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  cursor: pointer;
+  background-color: #ffa48e;
+  border-bottom-right-radius: inherit;
+  border-top-right-radius: inherit;
+}
+.flt-item4 {
+  position: relative;
+  /* background-color: #36c7d0; */
+}
+.flt-item4 input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #80868b;
+  border-radius: inherit;
+  position: absolute;
+  outline: none;
+  top: 0;
+  left: 0;
+  /* padding-left: 8px; */
+}
+.flt-item4 input[type="text"] {
+  font-size: 17px;
+  /* text-align: center; */
+  padding-left: 18px;
+}
+.flt-item4 input:focus::placeholder {
+  color: transparent;
+}
+.flt-item4 button {
+  width: 20px;
+  height: 78px;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  cursor: pointer;
+  background-color: #36c7d0;
+  border-bottom-right-radius: inherit;
+  border-top-right-radius: inherit;
+}
+/* .dropdown {
+  width: 80%;
+  height: 100%;
+} */
+/* .drp1 {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+.drp2 {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+.drp3 {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+.drp4 {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+} */
+/* .drp1 option {
+  opacity: 1;
+}
+.drp2 option {
+  opacity: 1;
+}
+.drp3 option {
+  opacity: 1;
+}
+.drp4 option {
+  opacity: 1;
+} */
+/* .flt-item1 label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+/* .flt-item2 label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.flt-item3 label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.flt-item4 label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+.signup-block {
+  width: 100%;
+  height: 200px;
+  background-color: #f3eed9;
+  position: relative;
+}
+.signup-container {
+  position: absolute;
+  top: 50%;
+  left: 8rem;
+  /* transform: translate(0, -50%); */
+  transform: translateY(-50%);
+  width: 500px;
+  /* background-color: #fff; */
+  height: 70px;
+  display: flex;
+}
+.signup-container button {
+  background-color: var(--bg-secondary);
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 9rem;
+  height: 2.4rem;
+  font-size: 16px;
+  font-family: var(--font-family-primary);
+  margin-right: 20px;
+  margin-top: 15px;
+  margin-left: 5px;
+  transition: 0.5s;
+}
+.signup-container button:hover {
+  cursor: pointer;
+  color: var(--bg-secondary);
+  background-color: #fff;
+  transition: 0.4s ease-out;
+  border: 2px solid var(--bg-secondary);
+}
+.signup-container button:active {
+  transition: 0.1s;
+}
+.signup-container p {
+  margin-top: 25px;
+}
+/* .drp3 option {
+  height: 150px;
+  width: 100px;
+  border: 1px solid red;
+} */
+.jobs-block {
+  /* height: 600px; */
+  /* border: 1px solid red; */
+  margin-bottom: 50px;
+}
+.jobs-container {
+  border-bottom: 1px solid #dae4ed;
+  position: relative;
+  /* box-shadow: inset 0 0 0 1px #dae4ed, 0 5px 15px -5px rgb(0 0 0 / 10%); */
+}
+.job-details {
+  width: 300px;
+  height: 250px;
+  padding: 10px;
+  /* border: 1px solid red; */
+  border-bottom: 4px solid #824936;
+  box-shadow: inset 0 0 0 1px #dae4ed, 0 5px 15px -5px rgb(0 0 0 / 10%);
+  position: relative;
+  margin: 30px;
+}
+.job-details h4,
+h5,
+p {
+  margin-bottom: 10px;
+}
+.job-details svg {
+  position: absolute;
+  left: 80px;
+}
+.recruiter-details {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-bottom: 4px solid #824936;
+  box-shadow: inset 0 0 0 1px #dae4ed, 0 5px 15px -5px rgb(0 0 0 / 10%);
+  width: 300px;
+  height: 250px;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

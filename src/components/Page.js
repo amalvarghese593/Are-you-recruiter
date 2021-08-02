@@ -117,7 +117,13 @@ export const Page = () => {
       <div className="filter-block">
         <div className="filter-items-container">
           <div className="filter-items flt-item1">
-            <label htmlFor="drop1">Locations</label>
+            {/* <label htmlFor="drop1">Locations</label> */}
+            <input
+              type="text"
+              list="data"
+              id="location-id"
+              placeholder="Select Location"
+            />
             <select
               id="drop1"
               className="dropdown drp1"
@@ -127,17 +133,31 @@ export const Page = () => {
                 return <option value="hello">{item}</option>;
               })}
             </select>
+            <button>+</button>
           </div>
           <div className="filter-items flt-item2">
-            <label htmlFor="drop2">Interests</label>
+            {/* <label htmlFor="drop2">Interests</label> */}
+            <input
+              type="text"
+              list="data"
+              id="location-id"
+              placeholder="Select Location"
+            />
             <select id="drop2" className="dropdown drp2">
               {skills.map((item) => {
                 return <option>{item.skill_name}</option>;
               })}
             </select>
+            <button>+</button>
           </div>
           <div className="filter-items flt-item3">
-            <label htmlFor="drop3">Industries</label>
+            {/* <label htmlFor="drop3">Industries</label> */}
+            <input
+              type="text"
+              // list="data"
+              id="location-id"
+              placeholder="Select Industries"
+            />
             <div className="industry-dropdown-wrapper">
               <select
                 id="drop3"
@@ -148,10 +168,17 @@ export const Page = () => {
                   return <option>{item}</option>;
                 })}
               </select>
+              <button>+</button>
             </div>
           </div>
           <div className="filter-items flt-item4">
-            <label htmlFor="drop4">Functions</label>
+            {/* <label htmlFor="drop4">Functions</label> */}
+            <input
+              type="text"
+              list="data"
+              id="location-id"
+              placeholder="Select Location"
+            />
             <select
               id="drop4"
               className="dropdown drp4"
@@ -161,6 +188,7 @@ export const Page = () => {
                 return <option>{item}</option>;
               })}
             </select>
+            <button>+</button>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./newpage.css";
+import "./page.css";
 import "./lens.png";
 import axios from "axios";
 import { locations } from "./locations";
@@ -121,7 +121,7 @@ export const PageLatest = () => {
 
             <input
               type="text"
-              list="data"
+              list="drop1"
               id="location-id"
               placeholder="Select Location"
             />
@@ -141,7 +141,7 @@ export const PageLatest = () => {
             {/* <label htmlFor="drop2">Interests</label> */}
             <input
               type="text"
-              list="data"
+              list="drop2"
               id="interests-id"
               placeholder="Select Interests"
             />
@@ -157,7 +157,7 @@ export const PageLatest = () => {
             <div className="industry-dropdown-wrapper">
               <input
                 type="text"
-                list="data"
+                list="drop3"
                 id="industries-id"
                 placeholder="Select Industries"
               />
@@ -177,7 +177,7 @@ export const PageLatest = () => {
             {/* <label htmlFor="drop4">Functions</label> */}
             <input
               type="text"
-              list="data"
+              list="drop4"
               id="functions-id"
               placeholder="Select Functions"
             />
