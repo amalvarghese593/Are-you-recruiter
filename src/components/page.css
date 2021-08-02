@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+:root {
+  --bg-primary: #d82028;
+  --bg-secondary: #373656;
+  --font-family-primary: "Poppins", sans-serif;
+  --font-family-secondary: "Roboto", sans-serif;
+  --color-white: #fff;
+  --first-color: #1a73e8;
+  --input-color: #80868b;
+  --border-color: #dadce0;
+  --body-font: "Roboto", sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.75rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-family-primary);
+  margin-bottom: 0px;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-family-secondary);
+  margin: 0px;
+  line-height: 24px;
+}
+
+ul,
+li {
+  padding: 0px;
+  margin: 0px;
+  font-family: var(--font-family-secondary);
+}
+
+.recruiter-search-block {
+  background-color: #121212;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+.input-container {
+  border: 1px solid blue;
+  /* width: 260px; */
+  height: 70px;
+  position: relative;
+  margin-top: 30px;
+  padding-inline: 10px;
+}
+/* .input-container span {
+  position: absolute;
+  left: 10px;
+  top: 23px;
+  border: 1px solid red;
+} */
+.search-jobs-input {
+  padding-left: 35px;
+  border: 1px solid #b1b1b1;
+  width: 60%;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 0;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 35px;
+  outline: none;
+  z-index: 1;
+  /* position: absolute; */
+}
+.search-jobs-input[type="text"] {
+  border-radius: 0 !important;
+  height: 50px !important;
+  font-size: 14px !important;
+  box-shadow: none !important;
+  line-height: 100% !important;
+  padding-right: 40rem;
+}
+.search-jobs-label {
+  position: absolute;
+  left: 4.5rem;
+  top: 1.5rem;
+  padding: 0 0.25rem;
+  background-color: #fff;
+  color: var(--input-color);
+  font-size: var(--normal-font-size);
+  transition: 0.3s;
+  cursor: text;
+}
+.search-jobs-input:focus + .search-jobs-label {
+  /* top: 2px;
+  left: 1.3rem;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  z-index: 10;
+  cursor: default; */
+  display: none;
+}
