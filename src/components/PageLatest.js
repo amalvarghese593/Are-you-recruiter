@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./page.css";
 import "./lens.png";
 import axios from "axios";
@@ -72,14 +72,27 @@ export const PageLatest = () => {
   };
   const selectLocationHandler = (event) => {
     const e = document.getElementById("drop1");
-    const strUser = e.options[e.selectedIndex].text;
-    setNewLocation(strUser);
+    const strUser = e.options[e.selectedIndex].value;
+    // setNewLocation(strUser);
+    console.log("amal onchange works: ", strUser);
   };
   const selectJobHandler = (e) => {
     setQuery(e.target.value);
   };
   const selectIndustryHandler = (e) => {
     setIndustry(e.target.value);
+  };
+  const locationRef = useRef();
+  const handleLocationNew = () => {
+    // const select = document.getElementById("drop1");
+    // const mySelectedValue = select.options[select.selectedIndex].value;
+    // console.log("amal selected location is : ", mySelectedValue);
+
+    console.log("amal here is ref value: ", locationRef);
+    console.log(
+      "amal here is innerhtml value: ",
+      locationRef.current.innerHTML
+    );
   };
   return (
     <div className="recruiter-wrapper">
@@ -124,18 +137,20 @@ export const PageLatest = () => {
               list="drop1"
               id="location-id"
               placeholder="Select Location"
+              name="location-name"
             />
 
             <datalist
               id="drop1"
               className="dropdown drp1"
-              //   onChange={selectLocationHandler}
+              ref={locationRef}
+              onChange={selectLocationHandler}
             >
               {locations.map((item) => {
                 return <option value={item} />;
               })}
             </datalist>
-            <button>+</button>
+            <button onClick={handleLocationNew}>+</button>
           </div>
           <div className="filter-items flt-item2">
             {/* <label htmlFor="drop2">Interests</label> */}
@@ -144,6 +159,7 @@ export const PageLatest = () => {
               list="drop2"
               id="interests-id"
               placeholder="Select Interests"
+              name="interests-name"
             />
             <datalist id="drop2" className="dropdown drp2">
               {skills.map((item) => {
@@ -160,6 +176,7 @@ export const PageLatest = () => {
                 list="drop3"
                 id="industries-id"
                 placeholder="Select Industries"
+                name="industries-name"
               />
               <datalist
                 id="drop3"

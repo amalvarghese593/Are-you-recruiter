@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./newpage.css";
+import "./page.css";
 import "./lens.png";
 import axios from "axios";
 import { locations } from "./locations";
