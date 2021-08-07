@@ -109,8 +109,9 @@ li {
 }
 .filter-block {
   width: 100%;
-  height: 200px;
+  height: 80px;
   /* background-color: aqua; */
+
   position: relative;
 }
 .filter-items-container {
@@ -122,6 +123,12 @@ li {
   display: flex;
   justify-content: center;
   column-gap: 140px;
+  /* margin-bottom: 20px; */
+}
+.filter-popup-container {
+  border: 1px solid blue;
+  height: 100px;
+  width: inherit;
 }
 .filter-items {
   width: 180px;
@@ -132,6 +139,31 @@ li {
 .flt-item1 {
   /* background-color: #4acfac; */
   position: relative;
+}
+.flt-item1 label {
+  cursor: text;
+  font-size: 17px;
+  color: #80868b;
+  position: absolute;
+  z-index: 10;
+  /* border: 1px solid red; */
+  width: inherit;
+  top: 50%;
+  left: 0;
+  padding-right: 15px;
+  transform: translateY(-50%);
+  transition: 0.3s ease;
+  /* opacity: 0; */
+}
+.input-location:focus + .location-label {
+  top: 10px;
+  /* left: 1.3rem; */
+  padding-right: 60px;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  /* z-index: 10; */
+  cursor: default;
 }
 .flt-item1 input {
   width: 100%;
@@ -149,9 +181,9 @@ li {
   /* text-align: center; */
   padding-left: 18px;
 }
-.flt-item1 input:focus::placeholder {
+/* .flt-item1 input:focus::placeholder {
   color: transparent;
-}
+} */
 .flt-item1 button {
   width: 20px;
   height: 78px;
@@ -161,6 +193,7 @@ li {
   top: 1px;
   cursor: pointer;
   background-color: #4acfac;
+  /* background-color: #fff; */
   border-bottom-right-radius: inherit;
   border-top-right-radius: inherit;
 }
@@ -311,12 +344,7 @@ li {
 .drp4 option {
   opacity: 1;
 } */
-/* .flt-item1 label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
+
 /* .flt-item2 label {
   position: absolute;
   top: 50%;
@@ -335,6 +363,7 @@ li {
   left: 50%;
   transform: translate(-50%, -50%);
 } */
+
 .signup-block {
   width: 100%;
   height: 200px;

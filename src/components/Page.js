@@ -5,7 +5,6 @@ import axios from "axios";
 import { locations } from "./locations";
 import { JobDetails } from "./JobDetails";
 import { SampleInputSelect } from "./SampleInputSelect";
-import { NewSample } from "./NewSample";
 
 export const Page = () => {
   const [industries, setIndustries] = useState([]);
@@ -39,7 +38,11 @@ export const Page = () => {
   const usp = new URLSearchParams(
     "job_function=test&industry=Broadcast Media&locations=hyderabad"
   );
-  console.log(usp.get("job_function"));
+  usp.append("locations", "Bangalore");
+  console.log(
+    "amal here are the values of locations search parameter",
+    usp.get("locations")
+  );
 
   const fetchResult = async () => {
     try {
@@ -210,7 +213,6 @@ export const Page = () => {
         </svg>
       </div>
       {/* <SampleInputSelect /> */}
-      <NewSample />
       <div className="jobs-block">
         <JobDetails />
         <JobDetails />
