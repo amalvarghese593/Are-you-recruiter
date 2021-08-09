@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import "./page.css";
 import "./lens.png";
 import axios from "axios";
@@ -21,6 +22,9 @@ export const PageLatest = () => {
   const [jobCount, setJobCount] = useState(0);
   const [newValue, setNewValue] = useState("");
 
+  const history = useHistory();
+  const location = useLocation();
+
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -29,7 +33,15 @@ export const PageLatest = () => {
       const response2 = await axios.get(
         "https:webpipl-api.webpipl.com/api/v1/skills/"
       );
+      const response3 = await axios.get(
+        // `https://webpipl-api.webpipl.com/api/v1/landingPage/getJobs?${queryString.toString()}`
+        "https://webpipl-api.webpipl.com/api/v1/landingPage/getJobs?job_function=test&industry=Broadcast Media&locations=hyderabad"
+      );
 
+      setJobs(response3.data.result);
+      setJobCount(response3.data.result.length);
+      console.log("here is response: ", response3);
+      console.log("here is no.of jobs: ", jobCount);
       setIndustries(response.data.industries);
       setjobFunctions(response.data.jobFunctions);
       setskills(response2.data.result);
@@ -41,14 +53,7 @@ export const PageLatest = () => {
   const [queryString, setQueryString] = useState(usp);
   const fetchResult = async () => {
     try {
-      const response3 = await axios.get(
-        `https://webpipl-api.webpipl.com/api/v1/landingPage/getJobs?${queryString.toString()}`
-      );
-
-      setJobs(response3.data.result);
-      setJobCount(response3.data.result.length);
-      console.log("here is response: ", response3);
-      console.log("here is no.of jobs: ", jobCount);
+      //moved to fetchData try block
     } catch (err) {
       console.log(err);
     }
@@ -66,25 +71,38 @@ export const PageLatest = () => {
   useEffect(() => {
     fetchResult();
   }, [queryString]);
+  console.log(queryString);
+  console.log("hello");
+  console.log("hi");
 
   const locationHandler = (e) => {
     setNewValue(e.target.value);
     const locationLatest = e.target.value.toLowerCase();
-    if (queryString.get("locations") === "") {
-      setQueryString(() => {
-        queryString.set("locations", locationLatest);
-        return queryString;
-      });
+    const queryParams = new URLSearchParams(location.search);
+    const currentLocationValue = queryParams.get("locations");
+    // if (queryString.get("locations") === "") {
+    //   setQueryString(() => {
+    //     queryString.set("locations", locationLatest);
+    //     return queryString;
+    //   });
+    // } else {
+    //   setQueryString(() => {
+    //     const arr = queryString.getAll("locations");
+    //     if (arr.indexOf(locationLatest) === -1) {
+    //       arr.push(locationLatest);
+    //       queryString.set("locations", arr.join(","));
+    //     }
+    //     return queryString;
+    //   });
+    // }
+    if (currentLocationValue === null) {
+      history.push(`/recruiter-page?locations=${locationLatest}`);
     } else {
-      setQueryString(() => {
-        const arr = queryString.getAll("locations");
-        if (arr.indexOf(locationLatest) === -1) {
-          arr.push(locationLatest);
-
-          queryString.set("locations", arr.join(","));
-        }
-        return queryString;
-      });
+      history.push(
+        `/recruiter-page?locations=${
+          currentLocationValue + "," + locationLatest
+        }`
+      );
     }
 
     e.target.value = "";
