@@ -6,6 +6,8 @@ import axios from "axios";
 import { locations } from "./locations";
 import { JobDetails } from "./JobDetails";
 import { FilterPopup } from "./FilterPopup";
+import { useDispatch, useSelector } from "react-redux";
+import { addQuery } from "./redux/actions";
 
 export const PageLatest = () => {
   const [industries, setIndustries] = useState([]);
@@ -24,6 +26,8 @@ export const PageLatest = () => {
 
   const history = useHistory();
   const location = useLocation();
+
+  const dispatch = useDispatch();
 
   const fetchData = async () => {
     try {
@@ -80,6 +84,10 @@ export const PageLatest = () => {
     const locationLatest = e.target.value.toLowerCase();
     const queryParams = new URLSearchParams(location.search);
     const currentLocationValue = queryParams.get("locations");
+    console.log("amal getall: ", queryParams.getAll("locations"));
+
+    dispatch(addQuery(locationLatest));
+
     // if (queryString.get("locations") === "") {
     //   setQueryString(() => {
     //     queryString.set("locations", locationLatest);

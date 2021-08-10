@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteQuery } from "./redux/actions";
 import "./filterpopup.css";
 
 export const FilterPopup = (props) => {
   const [filters, setFilters] = useState([]);
   const [isClear, setIsClear] = useState(false);
+  const dispatch = useDispatch();
 
   const clearHandler = () => {
     setFilters([]);
@@ -12,6 +15,7 @@ export const FilterPopup = (props) => {
   const singleClearHandler = (e) => {
     const itemValue = e.currentTarget.id;
     setFilters(filters.filter((i) => i !== itemValue));
+    dispatch(deleteQuery(itemValue.toLowecase()));
   };
   useEffect(() => {
     if (props.newValue !== "") {
